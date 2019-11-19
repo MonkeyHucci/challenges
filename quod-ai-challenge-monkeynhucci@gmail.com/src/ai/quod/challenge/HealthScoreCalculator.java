@@ -15,8 +15,8 @@ import processor.EventsDownloader;
 public class HealthScoreCalculator {
 
 	public static void main(String[] args) {
-		DateTime startDatetime = DateTime.parse("2019-08-01T00:00:00Z");
-		DateTime endDatetime = DateTime.parse("2019-08-01T10:00:00Z");
+		DateTime startDatetime = DateTime.parse(args[0]);
+		DateTime endDatetime = DateTime.parse(args[1]);
 
 		EventsDownloader eventsDownloader = new EventsDownloader(startDatetime, endDatetime);
 		List<Project> projects = eventsDownloader.run();

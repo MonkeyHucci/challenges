@@ -43,7 +43,6 @@ public class EventsDownloader {
 		try {
 			String urlString = String.format("https://data.gharchive.org/%d-%02d-%02d-%d.json.gz", datetime.getYear(),
 					datetime.getMonthOfYear(), datetime.getDayOfMonth(), datetime.getHourOfDay());
-			System.out.println(urlString);
 			URL downloadURL = new URL(urlString);
 			InputStream downloadStream = downloadURL.openStream();
 			GZIPInputStream gzStream = new GZIPInputStream(downloadStream);
