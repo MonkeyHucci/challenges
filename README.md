@@ -5,10 +5,10 @@ https://github.com/QuodAI/challenges/issues/3
 java -cp lib/gson-2.8.6.jar;lib/joda-time-2.10.5.jar;lib/json-20190722.jar;bin ai.quod.challenge.HealthScoreCalculator [datetime_start] [datetime_end]
 
 # Technical decisions
-What frameworks/libraries did you use? What are the benefits of those libraries?
-->
-gson: serialize and deserialize Java objects to (and from) JSON
-joda-time: the de facto standard date and time library for Java prior to Java SE 8
+What frameworks/libraries did you use? What are the benefits of those libraries?<br>
+-><br>
+gson: serialize and deserialize Java objects to (and from) JSON<br>
+joda-time: the de facto standard date and time library for Java prior to Java SE 8<br>
 json: JSON encoders/decoders in Java
 
 How would you improve your code for performance?
