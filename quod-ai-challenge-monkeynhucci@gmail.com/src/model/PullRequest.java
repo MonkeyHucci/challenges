@@ -14,8 +14,12 @@ public class PullRequest {
 	}
 
 	public long getMergedTime() {
-		return new Period(DateTime.parse(created_at), DateTime.parse(merged_at)).toDurationFrom(new DateTime(0))
-				.getMillis() / 1000;
+		if (created_at != null && merged_at != null) {
+			return new Period(DateTime.parse(created_at), DateTime.parse(merged_at)).toDurationFrom(new DateTime(0))
+					.getMillis() / 1000;
+		} else {
+			return 0;
+		}
 	}
 
 }

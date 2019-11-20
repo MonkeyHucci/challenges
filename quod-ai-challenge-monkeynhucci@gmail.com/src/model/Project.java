@@ -34,14 +34,20 @@ public class Project {
 			break;
 		case ISSUES:
 			if (((IssuesEvent) event).getAction().equals("closed")) {
-				issueOpeningTime += ((IssuesEvent) event).getOpeningTime();
-				numOfClosedIssues++;
+				long openingTime = ((IssuesEvent) event).getOpeningTime();
+				if (openingTime > 0) {
+					issueOpeningTime += openingTime;
+					numOfClosedIssues++;
+				}
 			}
 			break;
 		case PULL_REQUEST:
 			if (((PullRequestEvent) event).isMerged()) {
-				pullMergedTime += ((PullRequestEvent) event).getMergedTime();
-				numOfMergedPull++;
+				long mergedTime = ((PullRequestEvent) event).getMergedTime();
+				if (mergedTime > 0) {
+					pullMergedTime += mergedTime;
+					numOfMergedPull++;
+				}
 			}
 			break;
 		}
