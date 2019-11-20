@@ -41,6 +41,7 @@ public class EventsDownloader {
 
 	private void loadEvents(DateTime datetime) {
 		try {
+			System.setProperty("http.agent", "Chrome");
 			String urlString = String.format("https://data.gharchive.org/%d-%02d-%02d-%d.json.gz", datetime.getYear(),
 					datetime.getMonthOfYear(), datetime.getDayOfMonth(), datetime.getHourOfDay());
 			URL downloadURL = new URL(urlString);
